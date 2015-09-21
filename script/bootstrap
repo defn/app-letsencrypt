@@ -3,15 +3,8 @@
 set -efu
 
 function main {
-  mkdir -p vendor/virtualenv
-  virtualenv vendor/virtualenv
-  set +u; source vendor/virtualenv/bin/activate; set -u
-
   git clone git@github.com:letsencrypt/letsencrypt.git vendor/letsencrypt || true
-  pushd vendor/letsencrypt
-  pip install -r requirements.txt acme/ .
-  popd
-
+  app compile virtualenv cd vendor/letsencrypt '&&' pip install -r requirements.txt acme/ .
   ln -nfs ../vendor/virtualenv/bin/letsencrypt bin/
 }
 
