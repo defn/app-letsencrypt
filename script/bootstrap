@@ -3,9 +3,9 @@
 set -efu
 
 function main {
-  git clone git@github.com:letsencrypt/letsencrypt.git vendor/letsencrypt || true
-  app compile virtualenv cd vendor/letsencrypt '&&' pip install -r requirements.txt acme/ .
+  app compile virtualenv
   ln -nfs ../vendor/virtualenv/bin/letsencrypt bin/
+  ln -nfs ../vendor/virtualenv/bin/letsencrypt-renewer bin/
 }
 
 main "$@"

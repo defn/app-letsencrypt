@@ -1,1 +1,2 @@
-vendor/letsencrypt/requirements.txt
+git+https://github.com/kuba/ConfigArgParse.git@python2.6-0.9.3#egg=ConfigArgParse
+letsencrypt
