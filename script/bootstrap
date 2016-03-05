@@ -3,7 +3,7 @@
 set -efu
 
 function main {
-  app compile virtualenv
+  block compile virtualenv
   ln -nfs ../vendor/virtualenv/bin/letsencrypt bin/
   ln -nfs ../vendor/virtualenv/bin/letsencrypt-renewer bin/
 }
