@@ -3,7 +3,7 @@
 set -efu
 
 function main {
-  env PYTHON=python block compile virtualenv
+  env PYTHON=python2.7 block compile virtualenv
   ln -nfs ../vendor/virtualenv/bin/letsencrypt bin/
   ln -nfs ../vendor/virtualenv/bin/letsencrypt-renewer bin/
 }
